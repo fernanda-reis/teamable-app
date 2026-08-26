@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamable</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+</head>
+<body>
+    <div id="container-view">
+        <h1>User Profile</h1>
+        <img id="profile-img" src="./profile.jpeg" alt="Profile image">
+
+        <span>Name:</span> <b id="name"> Ana Smith</b>
+        <hr/>
+
+        <span>Email:</span> <b id="email">anna_smith@email.com</b>
+        <hr/>
+
+        <span>Interests:</span> <b id="interests">coding</b>
+        <hr/>
+
+        <button id="edit-profile-btn" onclick="handleEditProfile()">Edit Profile</button>   
+    </div> 
+
+    <div id="container-edit">
+        <h1>User Profile</h1>
+        <img id="profile-img" src="./profile.jpeg" alt="Profile image">
+
+        <span>Name:</span> <input id="input-name" type="text" />
+        <hr/>
+
+        <span>Email:</span> <input id="input-email" type="email" />
+        <hr/>
+
+        <span>Interests:</span> <input id="input-interests" type="text" />
+        <hr/>
+
+        <button id="save-profile-btn" onclick="handleSaveProfile()">Save Profile</button>      
+    </div>
+
+</body>
+</body>
+</html>
