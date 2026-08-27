@@ -12,14 +12,19 @@ function handleEditProfile() {
 }
 
 function handleSaveProfile() {
-  document.getElementById("container-view").style.display = "block";
-  document.getElementById("container-edit").style.display = "none";
-
   const newName = document.getElementById("input-name").value;
   const newEmail = document.getElementById("input-email").value;
   const newInterests = document.getElementById("input-interests").value;
 
+  if (!validator.isEmail(newEmail)) {
+    alert("Invalid email format!");
+    return;
+  }
+
   document.getElementById("name").textContent = newName;
   document.getElementById("email").textContent = newEmail;
   document.getElementById("interests").textContent = newInterests;
+
+  document.getElementById("container-view").style.display = "block";
+  document.getElementById("container-edit").style.display = "none";
 }
