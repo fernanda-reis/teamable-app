@@ -1,0 +1,13 @@
+{
+  "name": "tamable-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "vue": "3.5.42",
+    "core-js": "3.50.0",
+    "@vue/compiler-sfc": "3.5.42",
+    "@vue/cli-service": "5.0.9"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve"
+  }
+}
