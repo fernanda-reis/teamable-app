@@ -66,6 +66,8 @@ app.post('/update-profile', async function (req, res) {
     }
 })
 
-app.listen(3000, function () {
+const server = app.listen(3000, function () {
     console.log("app listening on port 3000")
 })
+
+module.exports = { app, server };
