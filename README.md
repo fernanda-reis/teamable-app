@@ -33,7 +33,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 The server creates or uses the `company_db` database and the `employees` collection. The profile is stored with `id: 1`, so the app currently supports one profile.
 
-## Development
+## 👩‍💻 Development
 
 To start the Vue development server:
 
