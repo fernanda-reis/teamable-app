@@ -31,7 +31,7 @@
     <input id="input-interests" type="text" v-model="interests" />
     <hr />
 
-    <button id="save-profile-btn" @click="handleSaveProfile">
+    <button id="save-profile-btn" @click="handleUpdateProfile">
       Save Profile
     </button>
   </div>
@@ -44,19 +44,48 @@ export default {
   data() {
     return {
       image: profileImage,
-      name: "Ana Smith",
-      email: "anna_smith@email.com",
-      interests: "coding",
+      name: "",
+      email: "",
+      interests: "",
       isEditMode: false,
     };
+  },
+  //executed automatically when the component is created
+  async created(){
+    const userData = await this.fetchUserProfile();
+    this.name = userData.name;
+    this.email = userData.email;
+    this.interests = userData.interests;
   },
   methods: {
     handleEditProfile() {
       this.isEditMode = true;
     },
-    handleSaveProfile() {
+    async handleUpdateProfile(){
+      const payload = {
+        name: this.name,
+        email: this.email,
+        interests: this.interests
+      }
+      const resJson = await this.updateUserProfile(payload);
+      console.log(resJson)
       this.isEditMode = false;
     },
+    async fetchUserProfile() {
+      const res = await fetch('get-profile')
+      return await res.json()
+    },
+    async updateUserProfile(payload){
+      const res = await fetch('update-profile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      return await res.json();
+    }
   },
 };
 </script>
